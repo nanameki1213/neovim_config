@@ -141,7 +141,7 @@ keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 
 -- neo-tree
-keymap.set('n', '<C-b>', ':Neotree filesystem reveal left<CR>')
+keymap.set('n', 'fa', ':Neotree filesystem reveal left<CR>')
 
 -- keybind
 keymap.set('n', 'ss', ':split<Return><C-w>w')
