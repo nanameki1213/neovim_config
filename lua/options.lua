@@ -10,29 +10,29 @@ local options = {
 	-- 検索に関する設定
 	hlsearch = true, -- 検索時のハイライトを有効にする
 	ignorecase = true, -- 検索時に大文字/小文字を区別しない
-	mouse = "a", -- マウス操作を有効化
-	-- pumheight = 10, -- 補完メニュー(?)の高さ
-	showmode = true, -- 現在のモードを最下部に表示する
-	showtabline = 2,
-	smartcase = true,
-	smartindent = true,
-	-- swapfile = false, -- スワップファイルを作成しないようにする
-	-- timeoutlen = 300,
-	-- updatetime = 300,
-	-- writebackup = false,
-	-- backupskip = { "/tmp/*", "/provate/tmp" },
-	expandtab = true,
-	shiftwidth = 2,
-	tabstop = 2,
-	cursorline = true,
-	number = true,
-	-- relativenumber = true, -- 行表示を相対的にする
-	numberwidth = 4,
-	signcolumn = "yes",
-	wrap = false,
-  -- 背景透過
-  termguicolors = false, 
-	winblend = 30,
+    mouse = "a", -- マウス操作を有効化
+    -- pumheight = 10, -- 補完メニュー(?)の高さ
+    showmode = true, -- 現在のモードを最下部に表示する
+    showtabline = 2,
+    smartcase = true,
+    smartindent = true,
+    -- swapfile = false, -- スワップファイルを作成しないようにする
+    -- timeoutlen = 300,
+    -- updatetime = 300,
+    -- writebackup = false,
+    -- backupskip = { "/tmp/*", "/provate/tmp" },
+    expandtab = true,
+    shiftwidth = 2,
+    tabstop = 2,
+    cursorline = true,
+    number = true,
+    -- relativenumber = true, -- 行表示を相対的にする
+    numberwidth = 4,
+    signcolumn = "yes",
+    wrap = false,
+    -- 背景透過
+    termguicolors = false, 
+    winblend = 30,
 	pumblend = 30,
 
 	-- background = "dark",
@@ -44,6 +44,7 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")
+vim.opt.clipboard = 'unnamedplus' -- システムクリップボードを使用
 
 for k, v in pairs(options) do
 	vim.opt[k] = v

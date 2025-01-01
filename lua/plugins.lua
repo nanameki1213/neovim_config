@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  -- Rustのコード整形
+  'rust-lang/rust.vim',
   -- LSP
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
@@ -121,22 +123,34 @@ require('mason-lspconfig').setup_handlers({ function(server)
 end })
 
 -- 2. build-in LSP function
+
+local keymap = vim.keymap
+
 -- keyboard shortcut
-vim.keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
-vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-vim.keymap.set('n', '<F12>', '<cmd>lua vim.lsp.buf.definition()<CR>')
-vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
-vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
-vim.keymap.set('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
-vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
-vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+keymap.set('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
+keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+keymap.set('n', '<F12>', '<cmd>lua vim.lsp.buf.definition()<CR>')
+keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+keymap.set('n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
+keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 
 -- neo-tree
-vim.keymap.set('n', '<C-b>', ':Neotree filesystem reveal left<CR>')
+keymap.set('n', '<C-b>', ':Neotree filesystem reveal left<CR>')
+
+-- keybind
+keymap.set('n', 'ss', ':split<Return><C-w>w')
+keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+
+keymap.set('n', 'sh', '<C-w>h')
+keymap.set('n', 'sk', '<C-w>k')
+keymap.set('n', 'sj', '<C-w>j')
+keymap.set('n', 'sl', '<C-w>l')
 
 -- 3. completion (hrsh7th/nvim-cmp)
 local cmp = require('cmp')
