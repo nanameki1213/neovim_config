@@ -44,7 +44,25 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")
-vim.opt.clipboard = 'unnamedplus' -- システムクリップボードを使用
+
+if vim.fn.has("wsl") == 1 then
+    if vim.fn.executable("win32yank") == 0 then
+        print("win32yank not found, clipboard integration won't work")
+    else
+        vim.g.clipboard = {
+          name = "win32yank",
+          copy = {
+            ["+"] = 'win32yank -i --crlf',
+            ["*"] = 'win32yank -i --crlf',
+          },
+          paste = {
+            ['+'] = 'win32yank -o --lf',
+            ['*'] = 'win32yank -o --lf',
+          },
+          cache_enabled = true
+        }
+    end
+end
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
