@@ -31,6 +31,7 @@ require('lazy').setup({
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
+  'cohama/lexima.vim',
   -- みため
   {
     'nvim-lualine/lualine.nvim',
