@@ -24,6 +24,13 @@ require('lazy').setup({
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'onsails/lspkind.nvim',
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  },
   -- みため
   {
     'nvim-lualine/lualine.nvim',
