@@ -33,7 +33,9 @@ local options = {
     -- 背景透過
     termguicolors = false, 
     winblend = 30,
-	pumblend = 30,
+    pumblend = 30,
+    undodir = "/home/nanameki/.config/nvim/undo",
+    undofile = true,
 
 	-- background = "dark",
 	-- scrolloff = 8,

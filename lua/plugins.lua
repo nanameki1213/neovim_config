@@ -32,6 +32,13 @@ require('lazy').setup({
     -- this is equivalent to setup({}) function
   },
   'cohama/lexima.vim',
+
+  -- GitHub Copilot
+  {
+    'github/copilot.vim',
+    lazy=false,
+  },
+
   -- みため
   {
     'nvim-lualine/lualine.nvim',
