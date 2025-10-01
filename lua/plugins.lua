@@ -122,6 +122,9 @@ require('neo-tree').setup({
 -- Reference: https://zenn.dev/botamotch/articles/21073d78bc68bf
 -- 1. LSP Server management
 require('mason').setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "rust_analyzer", "tsserver", "lua_ls" },
+});
 
 -- 2. build-in LSP function
 
