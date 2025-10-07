@@ -9,6 +9,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
@@ -31,12 +32,22 @@ require('lazy').setup({
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  'cohama/lexima.vim',
 
   -- GitHub Copilot
   {
-    'github/copilot.vim',
-    lazy=false,
+    'zbirenbaum/copilot.lua',
+    config = function ()
+      require('copilot').setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end
+  },
+  {
+    'zbirenbaum/copilot-cmp',
+    config = function ()
+      require('copilot_cmp').setup()
+    end
   },
 
   -- みため
@@ -165,6 +176,7 @@ cmp.setup({
     end,
   },
   sources = {
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
