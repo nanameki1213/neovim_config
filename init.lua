@@ -91,8 +91,7 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		['<C-p>'] = cmp.mapping.select_prev_item(),
 		['<C-n>'] = cmp.mapping.select_next_item(),
-		['<C-l>'] = cmp.mapping.complete(),
-		['<C-]>'] = cmp.mapping.abort(),
+		['<C-l>'] = cmp.mapping.abort(),
 		['<Tab>'] = cmp.mapping.confirm({ select = true }),
 	}),
 	experimental = {
