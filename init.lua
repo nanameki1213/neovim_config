@@ -26,15 +26,6 @@ require('lazy').setup({
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'onsails/lspkind.nvim',
-
-    -- GitHub Copilot
-    {
-      'zbirenbaum/copilot-cmp',
-      config = function()
-        require('copilot_cmp').setup()
-      end,
-    },
- },
 })
 
 require("options")
@@ -85,7 +76,6 @@ cmp.setup({
 	sources = {
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer' },
-		{ name = 'copilot' },
 		{ name = 'path' },
 	},
 	mapping = cmp.mapping.preset.insert({
