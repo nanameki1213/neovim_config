@@ -26,10 +26,13 @@ require('lazy').setup({
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'onsails/lspkind.nvim',
+  }
 })
+
 
 require("options")
 vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("default")
 
 -- Reference: https://zenn.dev/botamotch/articles/21073d78bc68bf
 -- 1. LSP Server management
