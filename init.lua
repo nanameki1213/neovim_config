@@ -32,7 +32,6 @@ require('lazy').setup({
 
 require("options")
 vim.cmd.colorscheme("catppuccin")
-vim.cmd.colorscheme("default")
 
 -- Reference: https://zenn.dev/botamotch/articles/21073d78bc68bf
 -- 1. LSP Server management
