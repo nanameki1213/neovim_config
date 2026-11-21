@@ -118,6 +118,13 @@ return {
 			})
 			vim.lsp.config("clangd", {
 				cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=never" },
+				-- compile_commands.json / compile_flags.txt が無いときのため、
+				-- VSCode の includePath "${workspaceFolder}/**" と同様に
+				-- ヘッダーのあるディレクトリ(とその親)を全部 -I に入れる
+				before_init = function(params, config)
+					params.initializationOptions = params.initializationOptions or {}
+					params.initializationOptions.fallbackFlags = require("include_dirs").flags(config.root_dir)
+				end,
 			})
 			vim.lsp.config("rust_analyzer", {
 				settings = { ["rust-analyzer"] = { check = { command = "clippy" } } },
